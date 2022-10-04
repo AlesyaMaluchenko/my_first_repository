@@ -32,4 +32,17 @@ class Complex_numbers:
     def out_exp(self):
         return Complex_numbers(float(self._re)*math.cos(float(self._im)), float(self._re)*math.sin(float(self._im)))
 
+    def __add__(self, other):
+        return Complex_numbers(self._re + other._re, self._im + other._im)
+
+    def __sub__(self, other):
+        return Complex_numbers(self._re - other._re, self._im - other._im)
+
+    def __mul__(self, other):
+        return Complex_numbers(self._re*other._re - self._im*other._im, self._re*other._im + self._im*other._re)
+
+    def __truediv__(self, other):
+        return Complex_numbers((self._re*other._re +self._im*other._im)/other._re**2 + other._im**2, (other._re*self._im - self._re*other._im)/other._re**2 + other._im**2)
+
+
 
