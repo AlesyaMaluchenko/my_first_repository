@@ -1,22 +1,16 @@
-class Base:
-    def get(self):
-        return self._x, self._y #функция создаёт своё пространство имён, вместо self можно и другую букву
-    def set(self, x, y):
-        self._x = x
-        self._y = y
-    def __init__(self, x, y): # можно по умолчанию ввести x=0, y=0
-        self.set(x, y)
+class Car:
+    _car_count = 0 # это поле, int неизменяем, если будет [], то он будет изменяться и остальные экземпляры тоже
 
-a = Base(4, 7) #внутри а теперь лежат две переменные
-b = Base(0, 0)
-c = Base()
-b._x = 5
-b._y = 7
-print(a._x, a._y) #вызываем
-print(b._x, b._y)
-print(*a.get()) # обращаемся к get и подтягиваем a к get, вместо self подставляется a
-print(*b.get())
-a.set(4, 6)
-print(*a.get())
+    def __init__(self, name):
+        self._name = name
+        Car._car_count += 1
+    def get_number_of_cars(self):
+        return self._car_count
+a = Car("Lada")
+b = Car("Gas")
+c = Car("Tesla")
+
+print(c.get_number_of_cars()) #если написать b или a, то всё равно будет 3
+
 
 
