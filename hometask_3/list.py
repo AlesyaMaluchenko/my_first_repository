@@ -67,3 +67,7 @@ class List:
             arr.append(str(self[i]))
         return "[" + ", ".join(arr) + "]"
 
+A = List()
+for i in range(4):
+    A.append(i)
+print(A)
