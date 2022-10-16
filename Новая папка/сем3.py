@@ -77,9 +77,3 @@ class List:
             arr.append(str(self[i]))
         return "[" + ", ".join(arr) + "]"
 
-A = List()
-for i in range(5):
-    A.append(i)
-for element in A:
-    print(element)
-print(A)
