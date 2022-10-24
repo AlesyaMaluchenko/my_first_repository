@@ -26,10 +26,10 @@ class Node:
     def __str__(self):
         return str(self.get_value())
 
-class List:
+class LinkedList:
     def __init__(self, collection = None):
-        self._start_pointer = None
-        self._finish_pointer = None
+        self._start_pointer = Node(0)
+        self._finish_pointer = Node(0)
         self._length = 0
 
     def __len__(self):
@@ -41,8 +41,7 @@ class List:
             self._finish_pointer = self._start_pointer
             self._length = 1
         else:
-            self._finish_pointer.set_next(Node(value,
-                                               self._finish_pointer))
+            self._finish_pointer.set_next(Node(value, self._finish_pointer))
             self._finish_pointer = self._finish_pointer.get_next()
             self._length += 1
 
@@ -56,7 +55,7 @@ class List:
             return curr_pointer.get_value()
         else:
             curr_pointer = self._finish_pointer
-            for j in range(self._length, i, -1):
+            for j in range(self._length - 1 - i):
                 curr_pointer = curr_pointer.get_prev()
             return curr_pointer.get_value()
 
@@ -67,7 +66,22 @@ class List:
             arr.append(str(self[i]))
         return "[" + ", ".join(arr) + "]"
 
-A = List()
-for i in range(4):
+    def pop(self, index):
+        curr_point = self._start_pointer
+        current_point = self._start_pointer
+        for i in range(index + 1):
+            curr_point = curr_point.get_next()
+        for j in range(index - 1):
+            current_point = current_point.get_next()
+        current_point.set_next(curr_point)
+        self._length -= 1
+
+A = LinkedList()
+for i in range(10):
     A.append(i)
 print(A)
+A.pop(3)
+print(A)
+B = LinkedList()
+for i in range(5):
+    B.append(i)
