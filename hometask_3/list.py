@@ -76,6 +76,18 @@ class LinkedList:
         current_point.set_next(curr_point)
         self._length -= 1
 
+    def __add__(self, other):
+        """
+
+        :type other: LinkedList
+        """
+        curr_p = other._start_pointer
+        for i in range(other._length - 1):
+            self.append(curr_p.get_value())
+            curr_p = curr_p.get_next()
+        return self
+
+
 A = LinkedList()
 for i in range(10):
     A.append(i)
@@ -85,3 +97,5 @@ print(A)
 B = LinkedList()
 for i in range(5):
     B.append(i)
+print(B[0])
+print(A.__add__(B))
