@@ -31,6 +31,9 @@ class LinkedList:
         self._start_pointer = Node(0)
         self._finish_pointer = Node(0)
         self._length = 0
+        if collection:
+            for k in range(len(collection)):
+                self.append(collection[k])
 
     def __len__(self):
         return self._length
@@ -99,3 +102,5 @@ for i in range(5):
     B.append(i)
 print(B[0])
 print(A.__add__(B))
+C = LinkedList(collection = [1, 3, 5, 7])
+print(C[3])
