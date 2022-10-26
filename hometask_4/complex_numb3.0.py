@@ -12,12 +12,16 @@ class Complex_numbers:
 
     def set_re(self, re):
         self._re = re
+        if not isinstance(re, int):
+            raise ValueError
 
     def get_im(self):
         return self._im
 
     def set_im(self, im):
         self._im = im
+        if not isinstance(im, int):
+            raise ValueError
 
     def modul(self):
         return (self._re**2 + self._im**2)**0.5
