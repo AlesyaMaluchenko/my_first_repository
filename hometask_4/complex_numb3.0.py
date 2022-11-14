@@ -12,7 +12,7 @@ class Complex_numbers:
 
     def set_re(self, re):
         self._re = re
-        if not isinstance(re, int):
+        if not isinstance(re, numbers.Number):
             raise ValueError
 
     def get_im(self):
@@ -20,17 +20,24 @@ class Complex_numbers:
 
     def set_im(self, im):
         self._im = im
-        if not isinstance(im, int):
+        if not isinstance(im, numbers.Number):
             raise ValueError
 
     def modul(self):
         return (self._re**2 + self._im**2)**0.5
 
     def angle(self):
-        return math.acos(self._re/(self._re**2 + self._im**2)**0.5)
+        try:
+            return math.acos(self._re/(self._re**2 + self._im**2)**0.5)
+        except ZeroDivisionError:
+            raise Exception("choose another operation")
 
     def in_exp(self):
-        return Complex_numbers(self.modul(), self.angle())
+        try:
+            return Complex_numbers(self.modul(), self.angle())
+        except ZeroDivisionError:
+            raise Exception("zero division!")
+
 
     def __str__(self):
         return str(self._re) + " + i * " + str(self._im)
@@ -41,10 +48,13 @@ class Complex_numbers:
     def __add__(self, other):
         if isinstance(other, numbers.Number):
             return Complex_numbers(self._re + other, self._im)
-        if isinstance(other, Complex_numbers):
+        elif isinstance(other, Complex_numbers):
             return Complex_numbers(self._re + other.get_re(),
                                    self._im + other.get_im())
-        return False
+        else:
+            print("enter a number!")
+
+
 
     def __sub__(self, other):
         if isinstance(other, numbers.Number):
@@ -64,12 +74,14 @@ class Complex_numbers:
         return False
 
     def __truediv__(self, other):
-        if isinstance(other, numbers.Number):
-            return Complex_numbers(self._re / other, self._im / other)
-        if isinstance(other, Complex_numbers):
-            return Complex_numbers((self._re*other._re + self._im*other._im)/other._re**2 + other._im**2,
+        try:
+            if isinstance(other, numbers.Number):
+                return Complex_numbers(self._re / other, self._im / other)
+            if isinstance(other, Complex_numbers):
+                return Complex_numbers((self._re*other._re + self._im*other._im)/other._re**2 + other._im**2,
                                (other._re*self._im - self._re*other._im)/other._re**2 + other._im**2)
-        return False
+        except ZeroDivisionError:
+            print("choose another operation")
 
     def __eq__(self, other):
         if isinstance(other, numbers.Number):
@@ -88,10 +100,19 @@ class Complex_numbers:
             return self._re
         elif item == 1:
             return self._im
-        return False
+        else:
+            raise Exception("out of range index")
 
     def __setitem__(self, item, value):
         if item == 0:
             self._re = value
         elif item == 1:
             self._im = value
+        else:
+            raise Exception("incorrect index")
+
+
+
+c = Complex_numbers(0, 0)
+#print(c[3])
+print(c.in_exp())
