@@ -113,7 +113,7 @@ def load():
     try:
         with open("new_file_for_hw.bin", mode="rb") as f:
             a = pickle.load(f)
-            print(a)
+            return a
 
     except FileNotFoundError:
         print("Данный файл отсутствует")
@@ -123,5 +123,7 @@ A.append(3)
 A.append(4)
 A.append(7)
 A.save()
-load()
+b = load()
+print(b, b[2], type(b))
+
 
