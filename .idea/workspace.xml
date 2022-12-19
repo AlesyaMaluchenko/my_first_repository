@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fea699a9-d578-488e-8efd-2e701c251e34" name="Changes" comment="err">
-      <change afterPath="$PROJECT_DIR$/hometask_7/dec_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="fea699a9-d578-488e-8efd-2e701c251e34" name="Changes" comment="dec1">
+      <change afterPath="$PROJECT_DIR$/hometask_7/dec_2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +64,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671476312903</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="dec1">
+      <created>1671477147445</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1671477147446</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -93,6 +99,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="к_в" />
     <MESSAGE value="err" />
-    <option name="LAST_COMMIT_MESSAGE" value="err" />
+    <MESSAGE value="dec1" />
+    <option name="LAST_COMMIT_MESSAGE" value="dec1" />
   </component>
 </project>
