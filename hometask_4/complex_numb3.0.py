@@ -33,10 +33,8 @@ class Complex_numbers:
             raise Exception("choose another operation")
 
     def in_exp(self):
-        try:
-            return Complex_numbers(self.modul(), self.angle())
-        except ZeroDivisionError:
-            raise Exception("zero division!")
+        return Complex_numbers(self.modul(), self.angle())
+
 
 
     def __str__(self):
