@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fea699a9-d578-488e-8efd-2e701c251e34" name="Changes" comment="exc">
-      <change afterPath="$PROJECT_DIR$/hometask_4/calc.py" afterDir="false" />
+    <list default="true" id="fea699a9-d578-488e-8efd-2e701c251e34" name="Changes" comment="calc">
       <change afterPath="$PROJECT_DIR$/hometask_8/matrix.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -94,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671541835616</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="calc">
+      <created>1671543335965</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1671543335965</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -126,6 +132,7 @@
     <MESSAGE value="dec2" />
     <MESSAGE value="dec3" />
     <MESSAGE value="exc" />
-    <option name="LAST_COMMIT_MESSAGE" value="exc" />
+    <MESSAGE value="calc" />
+    <option name="LAST_COMMIT_MESSAGE" value="calc" />
   </component>
 </project>
